@@ -1,0 +1,400 @@
+@font-face {
+    font-family: PoppinsBold;
+    src: url('/fonts/Poppins-Bold.ttf');
+}
+@font-face {
+    font-family: PoppinsSemiBold;
+    src: url('/fonts/Poppins-SemiBold.ttf');
+}
+@font-face {
+    font-family: PoppinsRegular;
+    src: url('/fonts/Poppins-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: PoppinsRegular;
+    color: #1E4754;
+}
+
+body {
+    background-color: #F4EFE3;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+nav.navbar {
+    height: 100vh;
+    width: 60px;
+    left: 0;
+}
+
+aside.scrollspy {
+    height: 100vh;
+    width: 180px;
+    right: 0;
+    position:fixed;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    z-index: 300;
+}
+
+aside.scrollspy div.scrollspy-line {
+    top: 0;
+    right: 18.75px;
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    z-index: 301;
+    background-color: #1E4754;
+}
+
+.scrollspy div.scrollspy-element {
+    width: 100%;
+    height: calc(9.0909090909% - 6.66666px);
+    text-align: right;
+    display: block;
+    position: relative;
+    z-index: 302;;
+}
+
+.scrollspy div.scrollspy-element div {
+    margin-top: auto;
+    margin-bottom: auto;
+    position: absolute;
+    right: 0;
+}
+
+.scrollspy div.scrollspy-element > div:nth-child(2){
+    right: 50px;
+}
+
+.scrollspy div.scrollspy-element.active p {
+    color: #EF5F47;
+}
+
+.scrollspy div.scrollspy-element.active .circle {
+    background-color: #EF5F47;
+}
+
+.scrollspy div.scrollspy-element .circle {
+    min-width: 24px;
+    min-height: 24px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 100%;
+    background-color: #1E4754;
+}
+
+.slide {
+    padding-left: 70px;
+    padding-right: 190px;
+    height: 100vh;
+    box-sizing: content-box;
+    text-align: center;
+    z-index: 101;
+}
+
+.slide > div {
+    width: 100%;
+    height: 100%;
+    margin:auto;
+    max-width: 1259px;
+    max-height: 722px;
+    box-sizing: content-box;
+    text-align: center;
+}
+
+.slide:not(#landing) > div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.slide:not(#landing) > div > div {
+    width: 50%;
+    z-index: 101;
+}
+
+.image-container {
+    display: block;
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.slide div.image-container div.image-at-center {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.slide div.image-container div.image-at-center > div {
+    margin: auto;
+}
+
+.slide div.floating-image-container {
+    isolation: isolate;
+    height: fit-content;
+    z-index: 290;
+    left: -60px;
+}
+
+.image-container div.animated-image img {
+    width: 100%;
+}
+
+.slide .image-container div.animated-image,
+.slide .text-container div {
+    position: relative;
+    transition: transform 1.1s ease-out 0ms, opacity 1.1s ease-out 0ms;
+}
+
+.slide:not(.active) .image-container.right div.animated-image,
+.slide:not(.active) .image-container.left div.animated-image {
+    opacity: 0;
+}
+
+main {
+    overflow: hidden;
+}
+
+.slide:not(.active) .image-container.left div.animated-image {
+    transform: translateX(-150px) translateY(-150px) rotate(-20deg);
+}
+.slide:not(.active) .image-container.right div.animated-image {
+    transform: translateX(150px) translateY(-150px) rotate(20deg);
+}
+.slide.active .image-container div.animated-image {
+    transform: none;
+    opacity: 1;
+}
+
+.slide:not(.active) .text-container div {
+    transform: translateY(150px);
+    opacity: 0;
+}
+.slide.active .text-container div {
+    transform: none;
+    opacity: 1;
+}
+
+.image-container div#colorado{
+    position: absolute;
+    right: 0;
+    top: 10%;
+    width: 60%;
+}
+.image-container div#outline-colorado{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70%;
+}
+
+.image-container .floating-image#ecosistema {
+    width: 70%;
+}
+
+.image-container .floating-image#ecosistema-outline {
+    position: absolute;
+    bottom: 0;
+    left: calc(-100% - 70px);
+    width: 80%;
+}
+
+.image-container .floating-image#nacionalizacion {
+    width: 70%;
+}
+.image-container .floating-image#nacionalizacion-outline {
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    width: 55%;
+}
+
+.image-container div#temperatura-agua{
+    position: absolute;
+    right: 0;
+    bottom: 5%;
+    width: 70%;
+}
+.image-container div#outline-temperatura-agua{
+    position: absolute;
+    left: 0;
+    top: 5%;
+    width: 90%;
+}
+
+.image-container div#ini-0{
+    width: 60%;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+}
+
+.image-container div#ini-1{
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    width: 60%;
+}
+
+.image-container div#pescador{
+    padding-bottom: 5%;
+    width: 90%;
+    margin: auto;
+}
+.image-container div#sagarpa{
+    margin: auto;
+    width: 60%;
+    padding-top: 5%;
+}
+
+.image-container div#vaquita-marina{
+    padding-bottom: 5%;
+    margin: auto;
+    width: 90%;
+}
+.image-container div#reserva{
+    width: 80%;
+    padding-top: 5%;
+    margin: auto;
+}
+
+.image-container div#cucapas{
+    padding-bottom: 5%;
+    margin: auto;
+    width: 80%;
+}
+.image-container div#cidh{
+    width: 80%;
+    padding-top: 5%;
+    margin: auto;
+}
+
+.image-container div#ddhh{
+    margin: auto;
+    width: 70%;
+}
+.image-container div#ONU{
+    width: 50%;
+    margin: auto;
+}
+
+.image-container div#collage{
+    width: 70%;
+    padding-top: 25%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.image-container div#collage > div {
+    width: 50%;
+    height: fit-content;
+    grid-column: 2;
+    grid-row: 2;
+    padding: 3px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+.image-container div#collage > div > img {
+    width: 100%;
+    display: block;
+}
+
+.image-container div#not-lucha{
+    width: 40%;
+    margin: auto;
+}
+
+.image-container div#barco{
+    width: 70%;
+    padding-top: 25%;
+    margin: auto;
+}
+.image-container div#outline-barco{
+    position: absolute;
+    width: 80%;
+    margin: auto;
+    left: 10px;
+    bottom: 5%;
+}
+
+.slide div.text-container {
+    margin-top: 80px;
+}
+
+.body-conteiner,
+.year-container {
+    margin: auto; 
+    width: 70%;
+}
+
+.year-container {
+    text-align: center;
+}
+
+.svg-container {
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+}
+
+.svg-container svg {
+    height: calc(1100vh + 390px);
+    display: block;
+    margin: auto;
+    z-index: 100;
+}
+
+#landing {
+    background-image: url('../img/landing_background.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    /* Overwite from .slide */
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.bold {
+    font-family: PoppinsBold;
+}
+.semi-bold {
+    font-family: PoppinsSemiBold;
+}
+
+.date-text {
+    color: #00A18F;
+    border: 3pt solid #EF5F47 ;
+    font-size: 40px;
+    width: fit-content;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height:60px;
+}
+.regular-text {
+    margin-top: 1em ;
+    margin-bottom: 1em ;
+    text-align: left;
+}
+.font-size-90 {
+    font-size: 90px;
+}
+
+.center-text {
+    text-align: center;
+    padding: 17.5% 0;
+    width: 100%;
+    height: 100%;
+}
