@@ -8,7 +8,6 @@ const maxDashArray = [];
 const currentDashArray = [];
 let dynamicStyles = null;
 let accumulatedDash = 0.0;
-/*
 svgPaths.forEach((path) => {
     const dashLength = path.getTotalLength();
     accumulatedDash = accumulatedDash + dashLength;
@@ -17,7 +16,6 @@ svgPaths.forEach((path) => {
     path.style.strokeDasharray = `${dashLength} ${dashLength}`;
     path.style.strokeDashoffset = -dashLength;
 });
-*/
 
 window.onscroll = onScroll;
 onScroll();
@@ -110,7 +108,7 @@ function activateSlides(ev) {
 }
 
 function onScroll(ev) {
-    // animateRiver(ev);
+    animateRiver(ev);
     backgroundAttachements(ev);
     activateSlides(ev);
 }

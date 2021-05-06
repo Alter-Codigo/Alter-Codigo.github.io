@@ -117,6 +117,10 @@ aside.scrollspy div.scrollspy-line {
     text-align: center;
 }
 
+.slide.landing > div {
+    height: 100vh;
+}
+
 .slide:not(.landing) > div {
     display: flex;
     flex-direction: row;
@@ -125,8 +129,37 @@ aside.scrollspy div.scrollspy-line {
 }
 
 .slide:not(.landing) > div > div {
-    width: 50%;
     z-index: 101;
+}
+
+.slide:not(.landing) > div > div.image-container {
+    width: 40%;
+}
+.slide:not(.landing) > div > div.text-container {
+    width: 60%;
+}
+
+.body-conteiner,
+.year-container {
+    margin: auto; 
+    width: fit-content;
+}
+
+@media (min-width: 1200px) {
+    .body-conteiner,
+    .year-container {
+        width: calc(100% - 40px);
+    }
+    .slide:not(.landing) > div > div.image-container {
+        width: 50%;
+    }
+    .slide:not(.landing) > div > div.text-container {
+        width: 50%;
+    }
+}
+
+.year-container {
+    text-align: center;
 }
 
 .image-container {
@@ -338,16 +371,6 @@ main {
 
 .slide div.text-container {
     margin-top: 80px;
-}
-
-.body-conteiner,
-.year-container {
-    margin: auto; 
-    width: 70%;
-}
-
-.year-container {
-    text-align: center;
 }
 
 .svg-container {
