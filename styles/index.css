@@ -11,6 +11,12 @@
     src: url('/fonts/Poppins-Regular.ttf');
 }
 
+@keyframes reveal {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -111,14 +117,14 @@ aside.scrollspy div.scrollspy-line {
     text-align: center;
 }
 
-.slide:not(#landing) > div {
+.slide:not(.landing) > div {
     display: flex;
     flex-direction: row;
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-.slide:not(#landing) > div > div {
+.slide:not(.landing) > div > div {
     width: 50%;
     z-index: 101;
 }
@@ -346,7 +352,7 @@ main {
 
 .svg-container {
     position: absolute;
-    top: 100vh;
+    top: 400vh;
     width: 100%;
 }
 
@@ -357,13 +363,38 @@ main {
     z-index: 100;
 }
 
-#landing {
+.cls-1, .cls-2, .cls-3 {
+    animation: all 0.5s ease-in-out;
+}
+
+section.landing {
     background-image: url('../img/landing_background.png');
     background-repeat: no-repeat;
     background-position: left bottom;
     /* Overwite from .slide */
     margin-left: 0px;
     margin-right: 0px;
+    height: 400vh;
+    background-attachment: fixed;
+}
+
+section.landing.not-attached {
+    background-attachment: initial;
+}
+
+section.landing > div.text-box-container {
+    display: flex;
+}
+
+section.landing > div.text-box-container > div.text-box {
+    margin: auto;
+    width: 60%;
+    max-width: 500px;
+    height: fit-content;
+    padding: 40px;
+    border-radius: 40px;
+    background-color: #EAC261;
+    font-size: 20px;
 }
 
 .bold {
